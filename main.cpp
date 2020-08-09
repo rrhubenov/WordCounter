@@ -10,7 +10,7 @@ int findStopSign(char* arg) {
     return -1;
 }
 
-bool hashInsert(char* word, char wordsArray[1024][64], unsigned& wordsArraySize, unsigned* wordsCountArray) {
+bool setInsert(char* word, char wordsArray[1024][64], unsigned& wordsArraySize, unsigned* wordsCountArray) {
     for(unsigned i = 0; i < wordsArraySize; i++) {
         if(strcmp(wordsArray[i], word) == 0) {
             wordsCountArray[i]++;
@@ -122,7 +122,7 @@ int main() {
         allWordsCount++;
 
         normalizeWord(pch);
-        if(hashInsert(pch, wordsArray, wordsArraySize, wordsCountArray)) {
+        if(setInsert(pch, wordsArray, wordsArraySize, wordsCountArray)) {
             distinctWordsCount++;
         }
 
